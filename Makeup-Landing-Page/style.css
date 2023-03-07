@@ -1,0 +1,39 @@
+html * {
+    font-family: 'Poppins', sans-serif;
+}
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    text-decoration: none;
+  }
+  .navbar a {
+    font-size: 14px;
+    margin: 0 80px;
+    color: #333;
+    text-decoration: none;
+  }
+  .navbar .get-started {
+    font-weight: 600;
+    margin-left: auto;
+    padding: 10px 33px;
+    background-color: #6F3C2A;
+    color: white;
+    border-radius: 7px;
+  }
+  h1{
+    font-family: 'Cinzel';
+    font-size: 38px;
+    margin-top: 50px;
+    margin-left: 80px;
+  }
+  h6{
+    text-align: left;
+    margin-bottom: 150px;
+    font-size: 14px;
+    margin-left: 80px;
+    color: #2A5D6F;
+  }
+  
