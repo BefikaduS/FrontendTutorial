@@ -16,6 +16,8 @@ header{
     align-items: center;
 }
 
+/* Navbar Section */
+
 nav {
     margin: 4em;
 }
@@ -24,10 +26,28 @@ nav ul {
     list-style-type: none;
     display: flex;
     gap: 4.1em;
+    margin: 0;
 }
 
 nav ul li a{
     text-decoration: none;
     color: black;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    position: relative;
+}
+
+nav ul li a.active:before{
+    position: absolute;
+    content: "";
+    width: 40%;
+    height: 1px;
+    border-bottom: 2px solid black;
+    bottom: -6px;
+}
+
+/* Hero Section*/
+
+main{
+    display: flex;
 }
