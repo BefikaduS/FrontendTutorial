@@ -33,7 +33,7 @@ nav ul li a{
     text-decoration: none;
     color: black;
     text-transform: uppercase;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     position: relative;
 }
 
@@ -44,14 +44,25 @@ nav ul li a.active:before{
     height: 1px;
     border-bottom: 2px solid black;
     bottom: -6px;
+    
+}
+
+nav ul li a::before{
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 1px;
+    border-bottom: 2px solid rgb(185, 185, 185);
+    bottom: -6px;
+    transition: width .4s;
 }
 
 /* Hero Section*/
 
 main{
     display: flex;
-    gap: 8em;
-    margin-top: 11em;
+    gap: 5em;
+    margin-top: 5em;
 }
 .left-col{
     width: 45%;
@@ -94,11 +105,12 @@ h1{
     display: block;
     padding: 1em 0em;
     align-items: center;
+    
 }
 
 .secondary-cta svg{
     width: 20px;
-
+    transition: transform .3s;
 }
 
 .news{
@@ -130,4 +142,137 @@ p.details{
     font-size: 1.4rem;
     margin: 0;
 }
-1:40:41 
+
+/* Right column gallery*/
+
+.right-col{
+    display: grid;
+    gap: 2.3em;
+    grid-template-columns: repeat(2 auto);
+    grid-template-areas:
+        "left right"
+        "left bottom";
+
+}
+
+.card{
+    border-radius: .8em;
+    padding: 1.1em;
+    display: flex;
+    align-items: end;
+    background-size: 150%;
+    transition: background-size 500ms;
+}
+
+.card1{
+    grid-area: left ;
+    background-image: url(../images/clothing1.jpg);
+    position: relative;
+
+}
+.card1:before{
+    position: absolute;
+    content: "";
+    background: url('../images/tag.svg') no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 20px;
+    left: -30px;
+    pointer-events: none;
+}
+
+.card2{
+    background-image: url(../images/clothing2.jpg);
+
+}
+
+.card3{
+    background-image: url(../images/clothing3.jpg);
+
+}
+
+.card-details{
+    background: white;
+    border-radius: .6em;
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 400ms;
+}
+
+.card-details a{
+    color: black;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+
+}
+
+.card-details p{
+    font-size: 1.4rem;
+    margin: 0;
+
+}
+
+p.product-price{
+    font-size: 1.8rem;
+}
+
+/* Micro interaction*/
+
+nav ul li a:hover:before{
+    width: 35%;
+}
+
+.primary-cta:hover{
+    background: #111820;
+    color: white;
+}
+
+.secondary-cta:hover svg{
+    transform: translateX(10px);
+}
+
+.secondary-cta:hover{
+    text-decoration: underline;
+}
+
+.card:hover{
+    background-size: 160%;
+}
+
+.card:hover .card-details{
+    transform: translateY(-20px);
+}
+
+.overlay{
+    position: absolute;
+    z-index: 999;
+    background: white;
+    width: 100%;
+    height: 100%;
+    animation: reveal 1s ease-in forwards;
+    transform-origin: bottom;
+}
+
+@keyframes reveal{
+    from{
+        transform: scaleY(1);
+    }
+    to{
+        transform: scaleY(0);
+    }
+}
+
+main{
+    animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform: scale(.4);
+}
+
+@keyframes growIn{
+    to{
+        transform: scale(1);
+    }
+}
